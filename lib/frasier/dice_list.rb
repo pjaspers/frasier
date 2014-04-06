@@ -1,5 +1,5 @@
 require 'stringio'
-
+require "set"
 module Frasier
 
   class DiceList
