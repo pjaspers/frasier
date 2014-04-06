@@ -19,4 +19,11 @@ describe 'generating a passphrase' do
     assert 3 == @g.passphrase.split(" ").length, "#{@g.passphrase} has a length of 3"
   end
 
+  it 'calculates entropy' do
+    assert_equal 3 ** 3, @g.entropy
+  end
+
+  it 'understands bits of entropy' do
+    assert_equal 4.75, @g.bits_of_entropy
+  end
 end
