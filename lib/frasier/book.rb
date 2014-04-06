@@ -4,9 +4,13 @@ module Frasier
     attr_accessor :title, :path
 
     def initialize(path)
-      raise ArgumentError, "No path specified" if (path || "").empty?
+      raise Errno::ENOENT unless File.exist?(path || "")
       @title = title_from_path(path)
       @path = path
+    end
+
+    def dice_word_list
+      DiceList.new(File.open(path)).word_list
     end
 
     private
