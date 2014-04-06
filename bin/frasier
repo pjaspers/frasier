@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require "pp"
+$:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
+
+require 'frasier'
+
+options = Frasier::CLI.parse(ARGV)
+Frasier::CLI.new(options)
