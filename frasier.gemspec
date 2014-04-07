@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "frasier"
   spec.version       = Frasier::VERSION
   spec.authors       = ["pjaspers"]
-  spec.email         = ["junkiesxl@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.email         = ["piet@jaspe.rs"]
+  spec.description   = %q{Passphrase generator using plain text books}
+  spec.summary       = %q{Inspired by Diceware™, except instead of being cryptogaphically sound, this uses not a carefully created word list but uses text from books.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
