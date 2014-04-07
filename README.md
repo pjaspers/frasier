@@ -19,7 +19,11 @@ For example using 'The Great Gatsby' it generates easy to remember* phrases like
 Inspired by [Diceware™](http://world.std.com/~reinhold/diceware.html), except instead of being cryptogaphically sound, this uses not a carefully created word list but uses text from books.
 
 ```
-Diceware™ is a method for picking passphrases that uses dice to select words at random from a special list called the Diceware Word List. Each word in the list is preceded by a five digit number. All the digits are between one and six, allowing you to use the outcomes of five dice rolls to select one unique word from the list.
+Diceware™ is a method for picking passphrases that uses dice to select
+words at random from a special list called the Diceware Word
+List. Each word in the list is preceded by a five digit number. All
+the digits are between one and six, allowing you to use the outcomes
+of five dice rolls to select one unique word from the list.
 ```
 
 It uses a simple `rand` to simulate the dice roll, the original [Diceware™](http://world.std.com/~reinhold/diceware.html) recommends against this.
