@@ -46,6 +46,16 @@ module Frasier
         end
       end
 
+      if Library.new.books.empty?
+        puts <<BLURB
+
+Please install some books into ~/.config/frasier/
+Example:
+      curl -L http://www.gutenberg.org/ebooks/8164.txt.utf-8 -o ~/.config/frasier/my_man_jeeves
+BLURB
+        exit
+      end
+
       opts.parse!(args)
       options
     end
