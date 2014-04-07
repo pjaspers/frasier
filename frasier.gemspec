@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["piet@jaspe.rs"]
   spec.description   = %q{Passphrase generator using plain text books}
   spec.summary       = %q{Inspired by Diceware™, except instead of being cryptogaphically sound, this uses not a carefully created word list but uses text from books.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/pjaspers/frasier"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
