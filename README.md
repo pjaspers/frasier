@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pjaspers/frasier.svg?branch=master)](https://travis-ci.org/pjaspers/frasier)
+
 ## What does it do?
 
 Generates phrases using words out of a book. Using high tech computering.
