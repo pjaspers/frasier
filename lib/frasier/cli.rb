@@ -67,11 +67,11 @@ module Frasier
       if info
         number_of_guesses = 100000
         duration_in_years = (@generator.duration_to_guess(number_of_guesses)/60.0/60.0/24.0/360.0).round(2)
+        puts "From: #{@book.title}"
         puts "Bits of entropy: #{@generator.bits_of_entropy}"
         puts "At 100 000 guesses/s, it would take %s years to guess" % duration_in_years
         puts ""
       end
-      puts  "Book: #{@book.title}"
       puts red(phrase)
     end
 
