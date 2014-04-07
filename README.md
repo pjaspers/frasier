@@ -53,6 +53,14 @@ Usage: frasier [options]
         --version                    Show version
 ```
 
+## Signed gem
+
+`frasier` is cryptographically signed. To be sure the gem you install hasn’t been tampered with:
+
+1. Download certificate https://raw.github.com/pjaspers/frasier/certs/pjaspers.pem
+2. Add `gem cert –add pjaspers.pem`
+3. gem install frasier -P HighSecurity
+
 ## Contributing
 
 1. Fork it
