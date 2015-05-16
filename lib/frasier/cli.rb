@@ -24,8 +24,10 @@ module Frasier
 
         opts.on("-b", "--book [NAME]", String, "Specify book to generate from") do |book|
           lib = Library.new
-          unless lib.book_with_name(book)
-            puts "I don't know that book"
+          unless book && lib.book_with_name(book)
+            puts "I don't know that book, did you mean:"
+            longest_title = lib.books.map(&:title).max.length
+            puts lib.books.map{|b| "      %s - %s" % [b.title.ljust(longest_title), File.basename(b.path)]}
             exit
           end
           options.book = book
