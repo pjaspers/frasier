@@ -8,7 +8,7 @@ module Frasier
 
     # A roll of the dice.
     def roll
-      rand(5) + 1
+      SecureRandom.random_number(5) + 1
     end
 
     # Simulate 5 dice rolls and get the word from our list
