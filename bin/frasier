@@ -4,5 +4,13 @@ $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 
 require 'frasier'
 
-options = Frasier::CLI.parse(ARGV)
-Frasier::CLI.new(options)
+begin
+  options = Frasier::CLI.parse(ARGV)
+  Frasier::CLI.new(options)
+rescue OptionParser::InvalidOption => e
+  puts <<BLURB
+Sorry, I didn't understand that. For a list of all available options:
+
+    frasier -h
+BLURB
+end
