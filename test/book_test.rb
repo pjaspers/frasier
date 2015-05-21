@@ -20,4 +20,8 @@ describe Frasier::Book do
     assert Frasier::Book.new(test_file).dice_word_list.length > 1
   end
 
+  it 'converts broken file to valid diceware' do
+    test_file = File.join(File.dirname(__FILE__), "files", "broken_encoding")
+    assert Frasier::Book.new(test_file).dice_word_list.length > 1
+  end
 end

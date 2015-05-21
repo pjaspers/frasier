@@ -23,12 +23,13 @@ module Frasier
 
       @valid_words = Set.new
       @io.each_line do |l|
+        l.encode!('UTF-8', 'UTF-8', invalid: :replace, undef: :replace, replace: '')
         # Funny story, in place methods are faster.
         l.gsub!(/[^[:alnum:]^[:blank:]]/, "")
         l.downcase!
         l.strip!
-        # Only 'short' words
-        l.split(" ").reject{|w| w.length < 3 || w.length > 10}.each do |w|
+        # Only 'short' words (discard numbers only)
+        l.split(" ").reject{|w| /\A\d+\z/.match(w) || w.length < 3 || w.length > 10}.each do |w|
           @valid_words.add(w)
         end
       end

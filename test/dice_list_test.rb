@@ -10,8 +10,13 @@ describe DiceList do
     end
 
     it "doesn't remove alphanumeric chars" do
-      d = DiceList.new(StringIO.new("OOO HAI 01234"))
-      assert_equal "ooo hai 01234", d.valid_words.to_a.join(" ")
+      d = DiceList.new(StringIO.new("OOO HAI 01a34"))
+      assert_equal "ooo hai 01a34", d.valid_words.to_a.join(" ")
+    end
+
+    it "remove all numeric chars (does adds supports for regulard dice lists)" do
+      d = DiceList.new(StringIO.new("11111 bob"))
+      assert_equal "bob", d.valid_words.to_a.join(" ")
     end
 
     it "handles é etc" do
