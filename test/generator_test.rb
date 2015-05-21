@@ -15,6 +15,10 @@ describe 'generating a passphrase' do
     assert_match /aaa|^bbb|^ccc/, @g.passphrase
   end
 
+  it 'can generate passphrase without whitespace' do
+    refute_match /[[:blank:]]/, @g.passphrase_without_whitespace
+  end
+
   it 'respects number_of_words' do
     assert 3 == @g.passphrase.split(" ").length, "#{@g.passphrase} has a length of 3"
   end

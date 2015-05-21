@@ -37,6 +37,10 @@ module Frasier
           options.info = info
         end
 
+        opts.on("-S", "--no-whitespace", "Replace whitespace with random characters") do |bool|
+          options.no_whitespace = !bool
+        end
+
         opts.on_tail("-h", "--help", "Show this message") do
           puts opts
           exit
@@ -69,11 +73,15 @@ BLURB
       number_of_words = options.number_of_words
 
       @generator = Generator.new(@book.dice_word_list, number_of_words)
-      print_passphrase(options.info)
+      print_passphrase(options.info, !!options.no_whitespace)
     end
 
-    def print_passphrase(info = true)
-      phrase = @generator.passphrase
+    def print_passphrase(info = true, no_whitespace = false)
+      if no_whitespace
+        phrase = @generator.passphrase_without_whitespace
+      else
+        phrase = @generator.passphrase
+      end
       # Try to copy it
       copy(phrase) if copy_command
       if info

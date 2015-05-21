@@ -18,6 +18,16 @@ module Frasier
       random_word
     end
 
+    def random_non_whitespace_char
+      %w(~ ! @ # $ % ^ & * ( ) _ + = - ).freeze.sample
+    end
+
+    def passphrase_without_whitespace
+      passphrase.split(" ").collect do |s|
+        s << random_non_whitespace_char
+      end.join("")
+    end
+
     def passphrase
       (0...@number_of_words).map do |i|
         random_word
