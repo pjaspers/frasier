@@ -4,6 +4,7 @@ require "frasier/book"
 require "frasier/dice_list"
 require "frasier/generator"
 require "frasier/cli"
+require "securerandom"
 
 module Frasier
 
