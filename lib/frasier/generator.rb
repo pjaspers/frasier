@@ -69,7 +69,7 @@ module Frasier
     def entropy
       _ = passphrase
       if @no_whitespace
-        (@word_list.length ** @words.length) * (@words.length ** non_whitespace_chars.length)
+        (@word_list.length ** @words.length) * ((@words.length - 1) * non_whitespace_chars.length)
       else
         @word_list.length ** @words.length
       end
